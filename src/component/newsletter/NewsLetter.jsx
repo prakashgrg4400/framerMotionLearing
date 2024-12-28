@@ -4,7 +4,7 @@ function NewsLetter() {
             <h1 className="text-2xl font-bold font-serif">
                 Subscribe to our NewsLetter
             </h1>
-            <p className="text-xs text-gray-400 max-w-[300px] ">
+            <p className="text-xs text-gray-400 max-w-[300px] text-center ">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
                 libero doloremque ab eum!
             </p>
@@ -15,6 +15,7 @@ function NewsLetter() {
                         name=""
                         id=""
                         className="border p-2 border-gray-300"
+                        placeholder="Enter your email"
                     />
                     <button className="uppercase px-4 py-2 bg-black text-white">
                         Subscribe

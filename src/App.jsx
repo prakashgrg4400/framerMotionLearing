@@ -7,6 +7,7 @@ import Banner from "./component/banner/Banner";
 import Banner2 from "./component/banner/Banner2";
 import Testimonials from "./component/testimonials/Testimonials";
 import NewsLetter from "./component/newsletter/NewsLetter";
+import Footer from "./component/footer/Footer";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
             <Banner2 />
             <Testimonials />
             <NewsLetter />
+            <Footer />
         </div>
     );
 }
