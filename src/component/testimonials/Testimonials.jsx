@@ -21,7 +21,7 @@ let testimonials = [
         delay: 0.7,
     },
     {
-        id: 1,
+        id: 3,
         image: "https://i.pravatar.cc/300?img=3",
         name: "George",
         title: "Manager",
