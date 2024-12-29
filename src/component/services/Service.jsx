@@ -1,6 +1,8 @@
 import { FaVectorSquare } from "react-icons/fa6";
 import { FaPenToSquare } from "react-icons/fa6";
 import { RiMoneyDollarCircleFill } from "react-icons/ri";
+import { slideup } from "../../animation/animate";
+import { motion } from "framer-motion";
 
 let services = [
     {
@@ -10,6 +12,7 @@ let services = [
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit,Lorem ipsum dolor sit amet, consectetur",
         link: "#",
+        delay: 0.9,
     },
     {
         id: 2,
@@ -18,6 +21,7 @@ let services = [
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit,Lorem ipsum dolor sit amet, consectetur",
         link: "#",
+        delay: 1.1,
     },
     {
         id: 3,
@@ -26,23 +30,37 @@ let services = [
         description:
             "Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
         link: "#",
+        delay: 1.3,
     },
 ];
 
 function Service() {
     return (
         <div>
-            <h2 className="text-4xl font-serif font-bold text-center mt-8 mb-4">
+            <motion.h2
+                variants={slideup(0.5)}
+                initial="initial"
+                whileInView={"animate"}
+                className="text-4xl font-serif font-bold text-center mt-8 mb-4"
+            >
                 What we Provide
-            </h2>
-            <p className="text-center w-1/2 mx-auto text-gray-500 ">
+            </motion.h2>
+            <motion.p
+                variants={slideup(0.7)}
+                initial="initial"
+                whileInView={"animate"}
+                className="text-center w-1/2 mx-auto text-gray-500 "
+            >
                 Bring your dream home to life with one-on-one design help & hand
                 picked products
-            </p>
+            </motion.p>
             <div className="container px-14 grid py-10 grid-cols-1 md:grid-cols-3 gap-4 ">
                 {services.map((service) => {
                     return (
-                        <div
+                        <motion.div
+                            variants={slideup(service.delay)}
+                            initial="initial"
+                            whileInView="animate"
                             key={service.id}
                             className="border border-gray-500 px-6 py-10 flex flex-col gap-4 hover:bg-black hover:text-white transition-all duration-300 hover:shadow-[5px_5px_0_0_gray] "
                         >
@@ -65,7 +83,7 @@ function Service() {
                                     Learn More
                                 </a>
                             </span>
-                        </div>
+                        </motion.div>
                     );
                 })}
             </div>

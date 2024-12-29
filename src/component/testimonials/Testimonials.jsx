@@ -1,3 +1,6 @@
+import { slideup, slideleft } from "../../animation/animate";
+import { motion } from "framer-motion";
+
 let testimonials = [
     {
         id: 1,
@@ -6,6 +9,7 @@ let testimonials = [
         title: "Designer",
         testimony:
             "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        delay: 0.5,
     },
     {
         id: 2,
@@ -14,6 +18,7 @@ let testimonials = [
         title: "Developer",
         testimony:
             "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        delay: 0.7,
     },
     {
         id: 1,
@@ -22,6 +27,7 @@ let testimonials = [
         title: "Manager",
         testimony:
             "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        delay: 0.8,
     },
 ];
 
@@ -29,19 +35,32 @@ function Testimonials() {
     return (
         <div className="mb-20">
             <div className="text-center py-10 flex flex-col gap-5">
-                <h2 className=" text-3xl font-serif font-bold">
+                <motion.h2
+                    variants={slideup(0.5)}
+                    initial="initial"
+                    whileInView={"animate"}
+                    className=" text-3xl font-serif font-bold"
+                >
                     Words from our coustomers
-                </h2>
-                <p className="max-w-[350px] mx-auto text-gray-500 text-sm">
+                </motion.h2>
+                <motion.p
+                    variants={slideup(0.7)}
+                    initial="initial"
+                    whileInView="animate"
+                    className="max-w-[350px] mx-auto text-gray-500 text-sm"
+                >
                     Bring your dream home to life with one-on-one design help &
                     hand picked products
-                </p>
+                </motion.p>
             </div>
             <div className="bg-black">
                 <div className="container px-14 grid grid-cols-1 md:grid-cols-3 py-10 gap-4  ">
                     {testimonials.map((testimonial) => {
                         return (
-                            <div
+                            <motion.div
+                                variants={slideleft(testimonial.delay)}
+                                initial="initial"
+                                whileInView={"animate"}
                                 className="border border-gray-300 flex flex-col py-8 px-5 group hover:bg-white transition duration-300  "
                                 key={testimonial.id}
                             >
@@ -66,7 +85,7 @@ function Testimonials() {
                                         {testimonial.testimony}
                                     </p>
                                 </div>
-                            </div>
+                            </motion.div>
                         );
                     })}
                 </div>
